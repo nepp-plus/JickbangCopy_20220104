@@ -1,6 +1,7 @@
 package com.neppplus.jickbangcopy_20220104.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.neppplus.jickbangcopy_20220104.R
+import com.neppplus.jickbangcopy_20220104.ViewRoomDetailActivity
 import com.neppplus.jickbangcopy_20220104.models.RoomData
 
 class RoomAdapter(
@@ -34,7 +36,15 @@ class RoomAdapter(
 
             row.setOnClickListener {
 //                임시 : 토스트 출력
-                Toast.makeText(mContext, "${data.description}", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(mContext, "${data.description}", Toast.LENGTH_SHORT).show()
+
+//                실제 : 상세보기 화면 이동 (Intent)
+
+                val myIntent = Intent(mContext, ViewRoomDetailActivity::class.java)
+
+//                화면의 도움을 받아 -> 다른 화면으로 이동 startActivity
+                mContext.startActivity(myIntent)
+
             }
 
         }
