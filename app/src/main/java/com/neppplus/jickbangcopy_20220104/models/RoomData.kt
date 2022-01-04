@@ -1,5 +1,6 @@
 package com.neppplus.jickbangcopy_20220104.models
 
+import java.io.Serializable
 import java.text.NumberFormat
 
 class RoomData(
@@ -7,7 +8,7 @@ class RoomData(
     val address: String,
     val floor: Int,
     val description: String, // 파이썬과 같이, 추가로 들어올 파라미터가 없어도 ,로 마무리해도 됨.
-) {
+) : Serializable {
 
     fun getFormattedPrice() : String {
 
